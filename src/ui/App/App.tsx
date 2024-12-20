@@ -1,5 +1,5 @@
 import './App.css'
-import {Route, Routes} from "react-router";
+import {HashRouter as Router, Route, Routes} from "react-router-dom";
 import {Settings} from "../views/Configuration/Settings.tsx";
 import {Dashboard} from "../views/Dashboard/Dashboard.tsx";
 import {Expenses} from "../views/Expenses/Expenses.tsx";
@@ -11,15 +11,17 @@ import {ProfileGlobe} from "../Components/ProfileGlobe/ProfileGlobe.tsx";
 function App() {
     return (
         <>
-            <ProfileGlobe/>
-            <Routes>
-                <Route path="/settings" Component={Settings}/>
-                <Route path="/" Component={Dashboard}/>
-                <Route path="/expenses" Component={Expenses}/>
-                <Route path="/income" Component={Income}/>
-                <Route path="/profile" Component={Profile}/>
-            </Routes>
-            <Navbar/>
+            <Router>
+                <ProfileGlobe/>
+                <Routes>
+                    <Route path="/settings" Component={Settings}/>
+                    <Route path="/" Component={Dashboard}/>
+                    <Route path="/expenses" Component={Expenses}/>
+                    <Route path="/income" Component={Income}/>
+                    <Route path="/profile" Component={Profile}/>
+                </Routes>
+                <Navbar/>
+            </Router>
         </>
     )
 }

@@ -1,0 +1,52 @@
+.Expenses{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: 53em;
+    gap: 1rem;
+    padding: 1em;
+}
+
+.Expenses section{
+    gap: 1em;
+}
+
+/*Inicio de flexbox*/
+.Expenses-top{
+    width: 100%;
+    position: relative;
+    display: flex;
+    flex:3;
+    /*background-color: #888888;*/
+}
+.expenses-circle-chart{
+    position: relative;
+    display: flex;
+    flex:3;
+}
+.expenses-calendar{
+    position: relative;
+    display: flex;
+    flex:7;
+    /*background-color: #252796;*/
+}
+/*Bot*/
+.Expenses-bot{
+    position: relative;
+    display: flex;
+    flex:2;
+    /*background-color: #d08e8e;*/
+}
+.expenses-table{
+    position: relative;
+    display: flex;
+    flex:4;
+    /*background-color: burlywood;*/
+}
+.expenses-feelings-chart{
+    position: relative;
+    display: flex;
+    flex:5;
+    /*background-color: chocolate;*/
+}
