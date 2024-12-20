@@ -1,0 +1,12 @@
+.profileGlobe{
+    z-index: 1;
+    position: sticky;
+    width: 4em;
+    height: 4em;
+    background-color: #ffffff;
+    border: #c02a2a 1px solid;
+    border-radius: 50%;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+}

@@ -1,0 +1,29 @@
+{
+  "appId": "com.electron.${name}",
+  "files": [
+    "backend/App.jar", 
+    "dist-electron",
+    "dist-react"
+  ],
+  "extraFiles": [
+    {
+      "from": "backend",
+      "to": "resources"
+    }
+  ],
+  "icon": "desktop.png",
+  "mac": {
+    "target": "dmg"
+  },
+  "linux": {
+    "target": "AppImage",
+    "category": "Utility"
+  },
+  "win": {
+    "sign": false,
+    "target": [
+      "portable",
+      "msi"
+    ]
+  }
+}

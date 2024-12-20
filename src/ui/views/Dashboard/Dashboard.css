@@ -1,0 +1,133 @@
+.Dashboard{
+    position: relative;
+    background-color: #ffffff;
+    width: auto; /*100%*/
+    height: 100em; /*110 em*/
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+   padding: 1em;
+}
+.Dashboard div{
+    gap: 1rem;
+
+}
+.child-dashboard{
+    border-radius: 25px;
+    background-color: #ffffff;
+    box-shadow: 0 0 20px 1px rgba(224, 224, 224, 0.76);
+}
+
+/*Top*/
+.dashboard-top{
+    display: flex;
+    flex: 1;
+    /*background-color: #c02a2a;*/
+    box-shadow: none;
+
+}
+/*Top-Left*/
+.dashboard-top-left{
+    display: flex;
+    flex-direction: column;
+    flex:3;
+    /*background-color: #2a54c0;*/
+}
+/*Top-Left-top*/
+.dashboard-top-left-top{
+    display: flex;
+    flex:7;
+    /*background-color: #662ac0;*/
+}
+/*Top-Left-bot*/
+.dashboard-top-left-bot{
+    display: flex;
+    flex:5;
+    /*background-color: #7e55bb;*/
+}
+/*Top-Left-bot-left*/
+.dashboard-top-left-bot-left{
+    display: flex;
+    flex:1;
+    /*background-color: #912794;*/
+}
+/*Top-Left-bot-right*/
+.dashboard-top-left-bot-right{
+    display: flex;
+    flex:1;
+    /*background-color: #99529b;*/
+}
+
+/*Top-Right*/
+.dashboard-top-right{
+    display: flex;
+    flex-direction: column;
+    flex:2;
+    /*background-color: #546798;*/
+}
+/*Top-Right-top*/
+.dashboard-top-right-top{
+    display: flex;
+    flex:1;
+    /*background-color: #278c43;*/
+}
+/*Top-Right-Bot*/
+.dashboard-top-right-bot{
+    display: flex;
+    flex:1;
+    /*background-color: #5da170;*/
+}
+
+/*Bot*/
+.dashboard-bot{
+    display: flex;
+    flex: 1;
+    /*background-color: #855858;*/
+}
+/*Bot-Left*/
+.dashboard-bot-left{
+    display: flex;
+    flex: 1;
+    /*background-color: #817525;*/
+    flex-direction: column;
+}
+/*Bot-Left-top*/
+.dashboard-bot-left-top{
+    display: flex;
+    flex: 1;
+    /*background-color: #3f8125;*/
+}
+/*Bot-Left-bot*/
+.dashboard-bot-left-bot{
+    display: flex;
+    flex: 2;
+    /*background-color: #5c884b;*/
+    box-shadow: none;
+}
+/*Bot-right*/
+.dashboard-bot-right{
+    display: flex;
+    flex: 1;
+    /*background-color: #938d68;*/
+    flex-direction: column;
+}
+/*Bot-right-top*/
+.dashboard-bot-right-top{
+    display: flex;
+    flex: 1;
+    /*background-color: #1b776a;*/
+}
+/*Bot-right-mid*/
+.dashboard-bot-right-center{
+    display: flex;
+    flex: 1;
+    /*background-color: #63918b;*/
+}
+/*Bot-right-bot*/
+.dashboard-bot-right-bot{
+    display: flex;
+    flex: 1;
+    /*background-color: #2c0233;*/
+}
+
