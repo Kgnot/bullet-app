@@ -12,7 +12,7 @@ function App() {
     return (
         <>
             <Router>
-                <ProfileGlobe/>
+                {/*<ProfileGlobe/>*/}
                 <Routes>
                     <Route path="/settings" Component={Settings}/>
                     <Route path="/" Component={Dashboard}/>
@@ -21,6 +21,7 @@ function App() {
                     <Route path="/profile" Component={Profile}/>
                 </Routes>
                 <Navbar/>
+                <ProfileGlobe/>
             </Router>
         </>
     )

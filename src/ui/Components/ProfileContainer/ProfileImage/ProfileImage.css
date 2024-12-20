@@ -1,0 +1,14 @@
+.profileImage{
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    && img {
+        width: 6em;
+        height: 6em;
+        border-radius: 50%;
+        background-color: aquamarine;
+        align-content: center;
+        object-fit: cover;
+   }
+}

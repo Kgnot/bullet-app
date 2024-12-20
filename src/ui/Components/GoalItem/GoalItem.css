@@ -1,0 +1,10 @@
+.goalItem {
+    position: relative;
+    background-color: #c02a2a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2em;
+    border-radius: 1em;
+    color: white;
+}

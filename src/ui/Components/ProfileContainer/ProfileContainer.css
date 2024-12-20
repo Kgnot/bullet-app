@@ -1,0 +1,33 @@
+.profileContainer{
+    position: relative;
+    display: flex;
+    padding:1em;
+    flex-direction: column;
+}
+.profileContainer-title{
+    position: relative;
+    display: flex;
+    flex:1;
+    align-items: center;
+    gap: 1em;
+}
+.profileContainer-body{
+    position: relative;
+    display: flex;
+    flex:5;
+}
+.profile-edit-button{
+    position:absolute;
+    top : 0;
+    right: 0;
+    margin: 1em;
+    padding: 1em;
+    background-color: #fff;
+    border: #dddddd 1px solid;
+    border-radius: 10px;
+    cursor: pointer;
+    &&:hover{
+        background-color: #e9e9e9;
+    }
+
+}

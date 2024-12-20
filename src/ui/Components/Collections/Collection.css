@@ -1,0 +1,12 @@
+.collection{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.collection__body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+}

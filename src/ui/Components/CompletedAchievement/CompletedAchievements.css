@@ -1,0 +1,10 @@
+.completedAchievements {
+    padding:0 1em;
+    display: flex;
+    flex-direction: column;
+}
+.completedAchievements > h1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

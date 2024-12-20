@@ -1,0 +1,11 @@
+.collectionItem{
+    display: flex;
+    align-items: center;
+    justify-content:center;
+    width: auto;
+    padding: 0 1em;
+    height: 2em;
+    background-color: aliceblue;
+    border-radius: 15px;
+    margin: 0.5em;
+}

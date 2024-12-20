@@ -1,0 +1,18 @@
+.goal{
+    position: relative;
+    display:flex;
+    flex-direction: column;
+}
+.goal__body{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 0 3em;
+    justify-content: center;
+    gap:1rem;
+}
+.goal h1{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}

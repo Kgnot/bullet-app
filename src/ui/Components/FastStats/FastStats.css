@@ -1,0 +1,11 @@
+.fastStats {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.fastStats__items{
+    display: flex;
+    gap: 1em;
+}

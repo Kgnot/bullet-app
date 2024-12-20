@@ -7,7 +7,6 @@ export const ProfileGlobe = () =>{
     return (
         <>
             <div className="profileGlobe">
-                <img src="" alt="profile - Photo"/>
             </div>
         </>
     )
