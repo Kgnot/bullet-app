@@ -1,0 +1,68 @@
+.Income {
+    position: relative;
+    display: flex;
+    width: auto;
+    height: 55em;
+    flex-direction: column;
+    padding: 1em;
+    gap: 1em;
+}
+.Income div{
+    gap: 1em;
+}
+.child-income{
+    padding: 1em;
+}
+/* flexbox start*/
+
+/*top*/
+.income-top {
+    position: relative;
+    display: flex;
+    flex:3;
+    /*background-color: #aa26b9;*/
+}
+/*top-left*/
+.income-top-left{
+    position: relative;
+    display: flex;
+    flex:1;
+}
+/*top-right*/
+.income-top-right{
+    position: relative;
+    display: flex;
+    flex:3;
+    flex-direction: column;
+}
+/*top-right-top*/
+.income-top-right-top{
+    position: relative;
+    display: flex;
+    flex:4;
+}
+/*top-right-bot*/
+.income-top-right-bot{
+    position: relative;
+    display: flex;
+    flex:1;
+}
+/*bot*/
+.income-bot{
+    position: relative;
+    display: flex;
+    flex: 2;
+    /*background-color: #d4bad7;*/
+}
+/*bot-left*/
+.income-bot-left{
+    position: relative;
+    display: flex;
+    flex:1;
+}
+/*bot-right*/
+.income-bot-right{
+    position: relative;
+    display: flex;
+    flex:3;
+}
