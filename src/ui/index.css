@@ -10,6 +10,11 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+body::-webkit-scrollbar {
+  display: none;
+}
+
+
 #root {
   margin: 0;
   padding: 0;
@@ -20,3 +25,12 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
   monospace;
 }
+/* child-bento-grid*/
+.child-default-comp {
+  border-radius: 15px;
+  background-color: #ffffff;
+  /*box-shadow: 0 0 20px 1px rgba(224, 224, 224, 0.76);*/
+  border: 1px solid rgba(224, 224, 224, 0.76);
+  margin: 0.5em;
+}
+

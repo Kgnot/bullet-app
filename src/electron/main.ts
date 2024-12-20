@@ -22,13 +22,22 @@ const executeJar = ()=> {
 }
 
 const createWindow = () => {
-    const mainWindow = new BrowserWindow({width: 1100, height: 750});
+    const mainWindow = new BrowserWindow({
+        width: 1100,
+        height: 750,
+        titleBarOverlay: {
+            color: '#2f3241',
+            symbolColor: '#74b1be',
+            height: 20
+        }
+    });
     if (process.env.NODE_ENV === 'development') {
         mainWindow.loadURL('http://localhost:5173');
-    } else {
+    }
+    else {
         mainWindow.loadFile(path.join(app.getAppPath()) + "/dist-react/index.html");
     }
-}
+};
 
 app.on("ready", () => {
     executeJar();

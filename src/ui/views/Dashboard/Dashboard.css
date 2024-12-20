@@ -13,12 +13,6 @@
     gap: 1rem;
 
 }
-.child-dashboard,
-.child-default-comp {
-    border-radius: 25px;
-    background-color: #ffffff;
-    box-shadow: 0 0 20px 1px rgba(224, 224, 224, 0.76);
-}
 
 /*Top*/
 .dashboard-top{
