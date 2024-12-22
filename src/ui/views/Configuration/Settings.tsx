@@ -1,6 +1,6 @@
 
 
-export const Settings = () => {
+const Settings = () => {
 
     return (
         <>
@@ -8,3 +8,5 @@ export const Settings = () => {
         </>
     )
 }
+
+export default Settings;

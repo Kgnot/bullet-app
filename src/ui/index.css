@@ -2,89 +2,105 @@
 @import url(https://db.onlinewebfonts.com/c/cef009888ec0e6c3fdbb27db91a57b8f?family=Proxima+Nova+A);
 @import url(https://db.onlinewebfonts.com/c/72b6f2c9990bd3d37b8013a59ed78902?family=Proxima+Nova+Bold);
 
-html{
-  scroll-behavior: smooth;
+/* Variables: */
+
+:root {
+    --main-bg-color-child: #ffffff;
+    --main-bg-color-child-shadow: #f5f7fd;
+    --main-bg-color-child-border: #eef2ff;
+    --color-violet-page: #a6456a;
+    /* Progress Var    */
+    --progress-var: #cbb735;
+}
+
+
+html {
+    scroll-behavior: smooth;
 }
 
 body {
-  margin: 0;
-  font-family:"Proxima Nova A", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-  sans-serif; /* "Proxima Nova Bold", "Proxima Nova Thin" */
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-body::-webkit-scrollbar {
-  display: none;
+    margin: 0;
+    font-family: "Proxima Nova A", -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif; /* "Proxima Nova Bold", "Proxima Nova Thin" */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
 
 #root {
-  margin: 0;
-  padding: 0;
-  text-align: center;
+    margin: 0;
+    padding: 0;
+    text-align: center;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-  monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
 }
+
 /* child-bento-grid*/
 .child-default-comp {
-  border-radius: 15px;
-  background-color: #ffffff;
-  /*box-shadow: 0 0 20px 1px rgba(224, 224, 224, 0.76);*/
-  border: 1px solid rgba(224, 224, 224, 0.76);
-  margin: 0.5em;
+    border-radius: 15px;
+    background: var(--main-bg-color-child);
+    box-shadow: 0 0 20px 1px var(--main-bg-color-child-shadow);
+    /*border: 1px solid var(--main-bg-color-child-border);*/
+    margin: 0.5em;
 }
 
 /* progress: */
 progress[value] {
-  --background:
-          radial-gradient(50% 50%,var(--c) 98%,#0000) top/10% 10% no-repeat,
-          conic-gradient(var(--c) calc(var(--p)*1%),#0000 0);
+    --background: radial-gradient(50% 50%, var(--progress-var) 98%, #0000) top/10% 10% no-repeat,
+    conic-gradient(var(--progress-var) calc(var(--p) * 1%), #0000 0);
 
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
-  position: absolute;
-  inset: 0;
-  height: 100%;
-  width: 100%;
-  border-radius: 50%;
-  overflow: hidden;
-  background: var(--background);
-  -webkit-mask: radial-gradient(50% 50%,#0000 79%,#000 80% 100%,#0000 102%);
-  mask: radial-gradient(50% 50%,#0000 79%,#000 80% 100%,#0000 102%);
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    border: none;
+    position: absolute;
+    inset: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--background);
+    -webkit-mask: radial-gradient(50% 50%, #0000 79%, #000 80% 100%, #0000 102%);
+    mask: radial-gradient(50% 50%, #0000 79%, #000 80% 100%, #0000 102%);
 }
+
 progress[value]::-webkit-progress-bar {
-  background: var(--background);
+    background: var(--background);
 }
+
 progress[value]::-webkit-progress-value {
-  background: #0000;
+    background: #0000;
 }
+
 progress[value]::-moz-progress-bar {
-  background: #0000;
+    background: #0000;
 }
 
 label {
-  --w: 160px;    /* the width*/
-  --c: #78b8cc;  /* the color */
+    --w: 160px; /* the width*/
+    --c: var(--progress-var); /* the color */
 
-  font-size: 20px;
-  font-weight: bold;
-  display: inline-grid;
-  place-content: center;
-  width: var(--w);
-  aspect-ratio: 1;
-  position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    display: inline-grid;
+    place-content: center;
+    width: var(--w);
+    aspect-ratio: 1;
+    position: relative;
 }
+
 label::before {
-  content: "";
-  position: absolute;
-  border-radius: 50%;
-  inset: 45%;
-  background: var(--c);
-  transform: rotate(calc(var(--p)*3.6deg)) translateY(calc(50% - var(--w)/2));
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    inset: 45%;
+    background: var(--c);
+    transform: rotate(calc(var(--p) * 3.6deg)) translateY(calc(50% - var(--w) / 2));
 }

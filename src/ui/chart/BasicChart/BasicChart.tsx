@@ -1,45 +1,27 @@
-import { useEffect, useRef } from "react";
-import Chart, { ChartTypeRegistry } from "chart.js/auto";
-import {ChartDefault, DataChart, DataSet} from "../../../chart__scripts/chartDefault.ts";
+import "./BasicChart.css"
+import {LineChart, Line, CartesianGrid, XAxis, YAxis, Tooltip, ResponsiveContainer,} from "recharts";
+import {CommonChart} from "../../../chart__scripts/ChartTypes.ts";
 
 interface BasicChartProps {
-    className?: string;
-    type: keyof ChartTypeRegistry;
-    chartName: string;
-    dataSets: DataSet[],
+    data: CommonChart;
 }
 
-const labels = ["enero", "febrero", "2012", "2013", "2014", "2015", "2016"];
-
-
-export const BasicChart = ({ className, type,chartName,dataSets}: BasicChartProps) => {
-    const chartRef = useRef<HTMLCanvasElement>(null);
-    const chartInstanceRef = useRef<Chart | null>(null); // Referencia al gráfico
-
-    const data:DataChart = {
-        labels:labels,
-        datasets: dataSets
-    }
-
-    const chart = new ChartDefault(type,chartName,data);
-
-    useEffect(() => {
-        if (chartInstanceRef.current) {
-            chartInstanceRef.current.destroy();
-        }
-        if (chartRef.current) {
-            chartInstanceRef.current = new Chart(chartRef.current, chart.config());
-        }
-        return () => {
-            if (chartInstanceRef.current) {
-                chartInstanceRef.current.destroy();
-            }
-        };
-    }, [chart, dataSets]);
-
+export const BasicChart = ({data}: BasicChartProps) => {
     return (
-        <div className={className}>
-            <canvas ref={chartRef} />
-        </div>
+            <ResponsiveContainer width="100%" height="100%">
+                <LineChart data={data.data}>
+                    <CartesianGrid stroke="#ccc" strokeDasharray="5 5"/>
+                    <XAxis dataKey={"name"}/>
+                    <YAxis/>
+                    <Tooltip/>
+                    {data.types.map((line) =>{
+                        return (
+                            <>
+                                <Line type="monotone" dataKey={line} stroke="#8884d8" />
+                            </>
+                        )
+                    } )}
+                </LineChart>
+            </ResponsiveContainer>
     );
 };

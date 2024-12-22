@@ -1,0 +1,12 @@
+.chart-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    width: 100%; /* Ocupa el 100% del espacio disponible */
+    height: 100%; /* Ocupa el 100% del espacio disponible */
+}
+
+.chart-container > svg {
+    width: 100%; /* Hace que el gráfico use el ancho del contenedor */
+    height: 100%; /* Hace que el gráfico use la altura del contenedor */
+}

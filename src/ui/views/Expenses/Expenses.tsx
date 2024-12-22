@@ -1,7 +1,6 @@
 import "./Expenses.css"
 
-
-export const Expenses = () => {
+const Expenses = () => {
     return (
         <>
             <section className="Expenses">
@@ -25,3 +24,5 @@ export const Expenses = () => {
         </>
     )
 }
+
+export default Expenses;

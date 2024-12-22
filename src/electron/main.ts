@@ -1,7 +1,7 @@
 import {app, BrowserWindow} from 'electron';
 import path from 'path';
 import {isDev} from './util.js'
-import { pollResources } from './resourceManager.js';
+//import { pollResources } from './resourceManager.js';
 
 
 const createWindow = () => {
@@ -23,5 +23,5 @@ const createWindow = () => {
 
 app.on("ready", () => {
     createWindow();
-    pollResources();
+    //pollResources();
 })
