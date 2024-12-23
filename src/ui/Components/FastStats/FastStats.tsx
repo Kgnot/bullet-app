@@ -15,13 +15,11 @@ export const FastStats = ({ className }: FastStatsProps) => {
                 <h1>Estadísticas rápidas</h1>
                 <div className="fastStats__items">
                     {/* Usa el valor numérico directamente */}
-                    <label style={{ "--p": progressValue__income.toString() } as CSSProperties}>
+                    <label className="fastStats_label" style={{ "--p": progressValue__income.toString() } as CSSProperties}>
                         Metas de ingresos:
                         <progress value={progressValue__income / 100} />
                     </label>
-
-                    {/* Un ejemplo estático */}
-                    <label style={{ "--p": progressValue_expenses.toString() } as CSSProperties}>
+                    <label className="fastStats_label" style={{ "--p": progressValue_expenses.toString() } as CSSProperties}>
                         Metas de ingresos:
                         <progress value={ progressValue_expenses /100} />
                     </label>

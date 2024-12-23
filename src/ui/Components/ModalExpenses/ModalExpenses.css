@@ -1,0 +1,26 @@
+.modalExpenses {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    align-items: start;
+    justify-content: start;
+    padding: 1em 1.3em;
+    gap: 1em;
+}
+
+.modalExpenses h3 {
+    text-align: start;
+}
+
+.modalExpenses p {
+    text-align: start;
+    color: #797979;
+}
+
+.form-description-input {
+    width: 20em;
+    min-height: 3rem; /* Altura mínima */
+    padding: 0.75rem;
+    resize: none;
+}

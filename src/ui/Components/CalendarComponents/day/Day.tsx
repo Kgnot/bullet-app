@@ -1,4 +1,8 @@
 import "./Day.css"
+import {useState} from "react";
+import {BackModal} from "../../_BackModal/BackModal.tsx";
+import {Modal} from "../../_Modal/Modal.tsx";
+import {ModalExpenses} from "../../ModalExpenses/ModalExpenses.tsx";
 
 interface DayProps {
     num: number;
@@ -9,6 +13,7 @@ type Pos = { x: number, y: number };
 
 
 export const Day = ({num, children = 0}: DayProps) => {
+    const [modal,setModal] = useState(false);
 
     const grads: number = 360;
     const vertex = grads / children;
@@ -24,9 +29,26 @@ export const Day = ({num, children = 0}: DayProps) => {
         }
         return positions;
     };
+
+    const handlerClick = () => {
+        setModal(true);
+    }
+    const closeModal = () => {
+        setModal(false);
+    }
+
+
     return (
         <>
-            <div className="day">
+            {modal &&
+                <><BackModal onClick={closeModal}>
+                    <Modal>
+                        <ModalExpenses/>
+                    </Modal>
+                </BackModal>
+                </>
+            }
+            <div className="day" onClick={handlerClick}>
                 <p className="day__num">{num}</p>
                 {!childExist && <div className="day__props">
                     {positionVertexDiv().map((pos, index) => (

@@ -1,0 +1,17 @@
+.modal-p {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    width: 50%;
+    height: 90%;
+    z-index: 11;
+    overflow-y: scroll;
+    min-width: 25em;
+    border-radius: 1em;
+    border: 1px solid #c0c0c0;
+}
+.modal-p::-webkit-scrollbar{
+    width: 0;
+}

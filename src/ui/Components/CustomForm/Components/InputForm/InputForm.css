@@ -1,0 +1,68 @@
+.form-input-group {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 0.5rem;
+    border: none;
+
+}
+
+.form-group-label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-control {
+    font-size: 1rem;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    background-color: #fff;
+    color: #333;
+    transition: all 0.3s ease-in-out;
+}
+
+.form-control:focus {
+    border-color: #000;
+    background-color: #f9f9f9;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+select.form-control {
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' d='M7 8l3 3 3-3'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    width: 25em;
+}
+
+.error {
+    font-size: 0.875rem;
+    color: #e74c3c; /* Rojo elegante */
+    margin-top: 0.25rem;
+}
+
+.is-invalid {
+    border-color: #e74c3c; /* Rojo elegante */
+    background-color: #fef2f2; /* Fondo suave para destacar el error */
+}
+
+button[type="submit"] {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #000;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #333; /* Gris oscuro elegante */
+}
