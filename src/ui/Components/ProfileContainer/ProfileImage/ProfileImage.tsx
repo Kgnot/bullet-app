@@ -8,7 +8,7 @@ export const ProfileImage = () => {
     return (
         <>
             <div className="profileImage">
-                <img src="/perfil.avif" alt="xd" />
+                <img src="./perfil.avif" alt="xd" />
                 <div>
                     <h3>Nombre de Usuario</h3>
                     <p>Correo Electrónico</p>

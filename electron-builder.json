@@ -3,7 +3,8 @@
   "files": [
     "backend/App.jar", 
     "dist-electron",
-    "dist-react"
+    "dist-react",
+    "public"
   ],
   "extraFiles": [
     {

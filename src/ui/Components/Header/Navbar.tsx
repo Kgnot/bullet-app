@@ -1,53 +1,34 @@
-import {NavLink} from "react-router";
-import './Navbar.css'
+import { NavLink } from "react-router";
+import './Navbar.css';
+import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomizeOutlined';
+import PriceChangeOutlinedIcon from '@mui/icons-material/PriceChangeOutlined';
+import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
+import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
 
 export const Navbar = () => {
+    const navItems = [
+        { to: "/profile", title: "Profile", Icon: AccountCircleIcon },
+        { to: "/", title: "Dashboard", Icon: DashboardCustomizeOutlinedIcon },
+        { to: "/expenses", title: "Expenses", Icon: PriceChangeOutlinedIcon },
+        { to: "/income", title: "Income", Icon: SavingsOutlinedIcon },
+        { to: "/settings", title: "Settings", Icon: ManageAccountsOutlinedIcon },
+    ];
+
     return (
-       <nav className={"navbar"}>
-           <NavLink
-               to="/profile"
-               className={({ isActive }) =>
-                   isActive ? "active" : ""
-               }
-           >
-               Profile
-           </NavLink>
-           {/* dashboard */}
-           <NavLink
-               to="/"
-               className={({ isActive }) =>
-                   isActive ? "active" : ""
-               }
-           >
-               Dashboard
-           </NavLink>
-           {/* expenses */}
-           <NavLink
-               to="/expenses"
-               className={({ isActive }) =>
-                   isActive ? "active" : ""
-               }
-           >
-               Expenses
-           </NavLink>
-           {/* income */}
-           <NavLink
-               to="/income"
-               className={({ isActive }) =>
-                   isActive ? "active" : ""
-               }
-           >
-               Income
-           </NavLink>
-           {/* Settings */}
-           <NavLink
-               to="/settings"
-               className={({ isActive }) =>
-                   isActive ? "active" : ""
-               }
-           >
-               Settings
-           </NavLink>
-       </nav>
-    )
-}
+        <nav className="navbar">
+            {navItems.map(({ to, title, Icon }) => (
+                <NavLink
+                    key={to}
+                    to={to}
+                    className={({ isActive }) => (isActive ? "active" : "")}
+                >
+                    <div className="navbar__item" title={title}>
+                        <Icon />
+                        <span className="navbar__tooltip">{title}</span>
+                    </div>
+                </NavLink>
+            ))}
+        </nav>
+    );
+};

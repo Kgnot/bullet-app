@@ -12,7 +12,7 @@ export const BasicComponentChild = ({title, className,children}: BasicComponentC
 
     return (
         <>
-            <div className={`${className}`} style={{display: "flex", flexDirection: "column", padding:"1em"}}>
+            <div className={`${className}`} style={{display: "flex", flexDirection: "column", padding:"1em", alignItems:'center',justifyContent:"center"}}>
                 {title && <h1> {title}</h1>}
                 {children}
             </div>

@@ -31,3 +31,31 @@ export const BasicBarChart = ({data}:BasicBarChart) => {
         </>
     )
 }
+
+export const defaultData: CommonChart = {
+    types: ['line1', 'line2'],
+    data: [
+        {
+            "name": "page1",
+            "line1": 10100,
+            "line2": 9000,
+        }, {
+            "name": "page2",
+            "line1": 1000,
+            "line2": 12000,
+        }, {
+            "name": "page3",
+            "line1": 4500,
+            "line2": 7000,
+        }, {
+            "name": "page4",
+            "line1": 10000,
+            "line2": 5000,
+        },
+        {
+            "name": "page5",
+            "line1": 10000,
+            "line2": 5000,
+        }
+    ]
+};

@@ -14,6 +14,7 @@ dist-electron
 *.local
 
 # Editor directories and files
+.storybook
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -24,3 +25,6 @@ dist-electron
 *.sln
 *.sw?
 layout
+
+*storybook.log
+*.stories.*

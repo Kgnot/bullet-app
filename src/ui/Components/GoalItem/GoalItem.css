@@ -1,6 +1,6 @@
 .goalItem {
     position: relative;
-    background-color: #c02a2a;
+    background-color: var(--color1-var);
     display: flex;
     align-items: center;
     justify-content: center;

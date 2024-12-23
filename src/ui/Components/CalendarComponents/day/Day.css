@@ -1,0 +1,61 @@
+.day{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    background-color: #ffffff;
+    justify-content: center;
+    border-radius: 50%;
+    /*width: 3em;*/
+    /*height: 3em;*/
+    height: 100%;
+    aspect-ratio: 1/ 1;
+    cursor: pointer;
+    transition:background .25s ease-in;
+}
+.day:hover{
+    background-color: #f1f1f1;
+}
+.day p{
+    position: static;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #482418;
+    font-size: 1.2em;
+}
+.day__items{
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #af0774;
+}
+
+.day__props{
+
+}
+.day:hover{
+    animation: spin 4.5s linear infinite;
+}
+.day:hover p{
+    animation: less_spin 4.5s linear infinite;
+}
+
+/*rotate animation: */
+@keyframes spin {
+    from {
+        transform: rotateZ(0deg);
+    }
+    to {
+        transform: rotateZ(360deg);
+    }
+}
+
+@keyframes less_spin {
+    from {
+        transform: rotateZ(360deg);
+    }
+    to {
+        transform: rotateZ(0deg);
+    }
+}

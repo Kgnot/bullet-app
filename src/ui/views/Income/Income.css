@@ -53,11 +53,18 @@
     display: flex;
     flex: 2;
     /*background-color: #d4bad7;*/
+    padding-bottom: 5em;
 }
 /*bot-left*/
 .income-bot-left{
-    position: relative;
     display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 2em;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
     flex:1;
 }
 /*bot-right*/
@@ -65,4 +72,80 @@
     position: relative;
     display: flex;
     flex:3;
+}
+
+
+/* Apartado del formulario: */
+/* Título */
+.income-bot-left h3 {
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 1.5em;
+}
+
+/* Formulario */
+.income-form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2em;
+}
+
+/* Grupo de formularios */
+.form-group {
+    display: flex;
+    align-items: center;
+    gap: 0.8em;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    padding: 0.5em 1em;
+    transition: border-color 0.3s ease;
+}
+
+.form-group:hover {
+    border-color: #1ea7fd;
+}
+
+/* Inputs */
+.income-form input,
+.income-form select {
+    flex: 1;
+    border: none;
+    outline: none;
+    font-size: 1em;
+    padding: 0.5em;
+    color: #555;
+    background-color: transparent;
+}
+
+/* Placeholders */
+.income-form input::placeholder,
+.income-form select::placeholder {
+    color: #999;
+}
+
+/* Iconos */
+.form-group svg {
+    color: #1ea7fd;
+    font-size: 1.5em;
+}
+
+/* Botón de enviar */
+.income-form button {
+    align-self: flex-end;
+    background-color: #1ea7fd;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 0.8em 1.5em;
+    font-size: 1em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.income-form button:hover {
+    background-color: #167ac6;
 }

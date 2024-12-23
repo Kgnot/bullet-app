@@ -1,0 +1,61 @@
+.calendar{
+    width: 60%;
+    min-width: 20em;
+    display: flex;
+    flex-direction: column;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.calendar__name{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 3em;
+    padding: 0 1em;
+    color: black;
+    text-transform: uppercase;
+}
+
+.calendar__week{
+    display: flex;
+    justify-content: space-between;
+    background-color: #a7c2bd;
+    min-height: 2em;
+    align-items: center;
+    padding: 0 1em;
+}
+
+.calendar__days_holder{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1em;
+    padding: 1em;
+    overflow: hidden;
+    flex-grow: 1;
+}
+
+.calendar__button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1em; /* Agregado para espaciado entre los botones */
+}
+
+.calendar__button button {
+    background-color: #a7c2bd;
+    color: white;
+    padding: 0.5em;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calendar__button button:hover {
+    background-color: #0b8ac5; /* Cambio de color al pasar el ratón */
+}
+
+.padding_days_calendar {
+    background-color: transparent;
+}

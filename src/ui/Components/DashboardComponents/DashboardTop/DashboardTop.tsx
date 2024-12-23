@@ -1,35 +1,13 @@
-import {BasicPieChart} from "../../../chart/PieChart/BasicPieChart.tsx";
+import {BasicPieChart, defaultPieData} from "../../../chart/PieChart/BasicPieChart.tsx";
 import {CommonChart, CommonPieChart} from "../../../../chart__scripts/ChartTypes.ts";
 import {BasicChart} from "../../../chart/BasicChart/BasicChart.tsx";
 import {BasicComponentChild} from "../../BasicComponentChart/BasicComponentChild.tsx";
 import {BasicTable} from "../../../table/BasicTable/BasicTable.tsx";
+import {ButtonChangeMonth} from "../../utils/ButtonChangeMonth/ButtonChangeMonth.tsx";
 
 const DashboardTop = () => {
 
-    const data: CommonPieChart = {
-        data: [
-            {
-                "name": "Compras pequeñas",
-                "value": 120400,
-                "color": "#4a8ea9"
-            },
-            {
-                "name": "Transporte",
-                "value": 65000,
-                "color": "#93122f"
-            },
-            {
-                "name": "Almuerzos",
-                "value": 130800,
-                "color": "#53a16b"
-            },
-            {
-                "name": "Regalos",
-                "value": 15000,
-                "color": "#76248d"
-            },
-        ]
-    }
+    const data: CommonPieChart = defaultPieData;
     const data2: CommonChart = {
         types: ['line1', 'line2', 'line3', 'line4', 'line5', 'line6'],
         data: [
@@ -94,7 +72,6 @@ const DashboardTop = () => {
                     >
                         <BasicTable/>
                     </BasicComponentChild>
-                    {/*<div className="dashboard-top-left-bot-right  child-default-comp"></div>*/}
                 </div>
             </div>
             <div className="dashboard-top-right">
@@ -103,6 +80,7 @@ const DashboardTop = () => {
                     title="GASTOS"
                     className="dashboard-top-right-top  child-default-comp"
                 > <BasicPieChart data={data}/>
+                    <ButtonChangeMonth parentMethod={()=>{}}/>
                 </BasicComponentChild>
 
                 <div className="dashboard-top-right-bot  child-default-comp">

@@ -4,16 +4,20 @@ import {isDev} from './util.js'
 //import { pollResources } from './resourceManager.js';
 
 
+
 const createWindow = () => {
     const mainWindow = new BrowserWindow({
         width: 1100,
         height: 750,
+        transparent: true,
         titleBarOverlay: {
             color: '#2f3241',
             symbolColor: '#74b1be',
-            height: 20
-        }
+            height: 25
+        },
+        autoHideMenuBar: true,
     });
+
     if (isDev()) {
         mainWindow.loadURL('http://localhost:5173');
     } else {
@@ -21,7 +25,18 @@ const createWindow = () => {
     }
 };
 
-app.on("ready", () => {
+app.whenReady().then(() => {
     createWindow();
-    //pollResources();
+
+    app.on('activate', () => {
+        if(BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    })
+});
+
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit();
+    }
 })
