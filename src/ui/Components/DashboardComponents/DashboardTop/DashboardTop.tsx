@@ -3,7 +3,7 @@ import {CommonChart, CommonPieChart} from "../../../../chart__scripts/ChartTypes
 import {BasicChart} from "../../../chart/BasicChart/BasicChart.tsx";
 import {BasicComponentChild} from "../../BasicComponentChart/BasicComponentChild.tsx";
 import {BasicTable} from "../../../table/BasicTable/BasicTable.tsx";
-import {ButtonChangeMonth} from "../../utils/ButtonChangeMonth/ButtonChangeMonth.tsx";
+import {ButtonChange} from "../../utils/ButtonChangeMonth/ButtonChange.tsx";
 
 const DashboardTop = () => {
 
@@ -80,7 +80,7 @@ const DashboardTop = () => {
                     title="GASTOS"
                     className="dashboard-top-right-top  child-default-comp"
                 > <BasicPieChart data={data}/>
-                    <ButtonChangeMonth parentMethod={()=>{}}/>
+                    <ButtonChange parentMethod={()=>{}}/>
                 </BasicComponentChild>
 
                 <div className="dashboard-top-right-bot  child-default-comp">

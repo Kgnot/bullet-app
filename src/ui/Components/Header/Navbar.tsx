@@ -5,6 +5,7 @@ import DashboardCustomizeOutlinedIcon from '@mui/icons-material/DashboardCustomi
 import PriceChangeOutlinedIcon from '@mui/icons-material/PriceChangeOutlined';
 import SavingsOutlinedIcon from '@mui/icons-material/SavingsOutlined';
 import ManageAccountsOutlinedIcon from '@mui/icons-material/ManageAccountsOutlined';
+import WalletRoundedIcon from '@mui/icons-material/WalletRounded';
 
 export const Navbar = () => {
     const navItems = [
@@ -12,6 +13,7 @@ export const Navbar = () => {
         { to: "/", title: "Dashboard", Icon: DashboardCustomizeOutlinedIcon },
         { to: "/expenses", title: "Expenses", Icon: PriceChangeOutlinedIcon },
         { to: "/income", title: "Income", Icon: SavingsOutlinedIcon },
+        { to: "/wallets", title: "Wallets", Icon: WalletRoundedIcon },
         { to: "/settings", title: "Settings", Icon: ManageAccountsOutlinedIcon },
     ];
 

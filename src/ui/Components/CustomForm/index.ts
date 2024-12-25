@@ -1,1 +1,1 @@
-export * from "./ExpensesForm.tsx";
+export * from "./ExpensesForm/ExpensesForm.tsx";

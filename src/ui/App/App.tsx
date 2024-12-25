@@ -11,6 +11,7 @@ const Dashboard = lazy(() => import("../views/Dashboard/Dashboard.tsx"));
 const Expenses = lazy(() => import("../views/Expenses/Expenses.tsx"));
 const Income = lazy(() => import("../views/Income/Income.tsx"));
 const Profile = lazy(() => import("../views/Profile/Profile.tsx"));
+const Wallets = lazy(()=>import("../views/Wallets/Wallets"))
 
 function App() {
     return (
@@ -25,6 +26,7 @@ function App() {
                         <Route path="/expenses" Component={Expenses} />
                         <Route path="/income" Component={Income} />
                         <Route path="/profile" Component={Profile} />
+                        <Route path="/wallets" Component={Wallets} />
                     </Routes>
                 </Suspense>
                 {/* Elementos comunes */}
