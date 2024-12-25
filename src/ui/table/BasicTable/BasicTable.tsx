@@ -1,4 +1,3 @@
-// import {Box} from '@mui/material';
 import {DataGrid, GridColDef} from '@mui/x-data-grid';
 
 const columns: GridColDef<(typeof rows)[number]>[] = [

@@ -1,6 +1,6 @@
 import "./Expenses.css"
 import {BasicComponentChild} from "../../Components/BasicComponentChart/BasicComponentChild.tsx";
-import {WholeCalendar} from "../../Components/CalendarComponents/WholeCalendar/WholeCalendar.tsx";
+import {WholeCalendar} from "../../Components/CalendarComponents/WholeCalendar.tsx";
 import {BasicPieChart, defaultPieData} from "../../chart/PieChart/BasicPieChart.tsx";
 import {BasicBarChart, defaultData} from "../../chart/BarChart/BasicBarChart.tsx";
 import {BasicChart} from "../../chart/BasicChart/BasicChart.tsx";

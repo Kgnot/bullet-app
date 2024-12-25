@@ -1,4 +1,4 @@
-import {Calendar} from "../Calendar/Calendar.tsx";
+import {Calendar} from "./Components/Calendar/Calendar.tsx";
 import "./WholeCalendar.css"
 
 export const WholeCalendar = () => {

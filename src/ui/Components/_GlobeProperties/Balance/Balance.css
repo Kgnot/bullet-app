@@ -1,0 +1,36 @@
+.balance {
+    top: 0;
+    right: 0;
+    transform: translateX(85%);
+    position: fixed;
+    display: flex;
+    gap: 1em;
+    background: linear-gradient(90deg, rgba(111, 167, 194, 1) 0%, rgba(255, 255, 255, 1) 17%, rgba(255, 255, 255, 1) 100%);
+    border: 1px solid #d2d2d2;
+    padding: 0 1em 0 3em;
+    border-radius: 4em 0 0 4em;
+    transition: transform 0.3s ease-in;
+    z-index: 1;
+    cursor: pointer;
+}
+
+.balance:hover {
+    transform: translateX(0);
+}
+
+.balance hr {
+    color: #d2d2d2;
+}
+
+.balance_child {
+    position: relative;
+    display: block;
+}
+
+.balance_incomes h3 {
+    color: #4b804b;
+}
+
+.balance_expenses h3 {
+    color: #b44b4b;
+}

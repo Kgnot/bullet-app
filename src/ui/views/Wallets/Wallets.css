@@ -1,0 +1,45 @@
+.wallets{
+    width:auto;
+    height: 55em;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 2.2em;
+}
+/*flexbox start :*/
+/*top*/
+.wallet-top{
+    position: relative;
+    display: flex;
+    flex:1;
+    max-height: 30em;
+}
+/*top-left*/
+.wallet-top-left{
+    display: flex;
+    flex:1;
+}
+.wallet-top-right{
+    display: flex;
+    flex:2;
+}
+/*bot*/
+.wallet-bot
+{
+    position: relative;
+    display: flex;
+    flex:1;
+}
+/*bot-left*/
+.wallet-bot-left
+{
+    position: relative;
+    display: flex;
+    flex:1;
+
+}
+/*bot-right*/
+.wallet-bot-right{
+    position: relative;
+    display: flex;
+    flex:1;
+}

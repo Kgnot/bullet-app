@@ -1,8 +1,8 @@
 import "./Calendar.css"
-import {MonthMethods, MonthName, PaddingDays} from "../../../../scripts/monthMethods.ts";
+import {MonthMethods, MonthName, PaddingDays} from "../../../../../scripts/monthMethods.ts";
 import {Day} from "../day/Day.tsx";
-import { useState} from "react";
-import {ButtonChangeMonth} from "../../utils/ButtonChangeMonth/ButtonChangeMonth.tsx";
+import {useState} from "react";
+import {ButtonChange} from "../../../utils/ButtonChangeMonth/ButtonChange";
 
 interface CalendarProps {
     className: string;
@@ -35,7 +35,7 @@ export const Calendar = ({className}:CalendarProps) => {
     return (
         <>
             <div className={`calendar ${className}`}>
-                <div className="calendar__name">{monthName}  - {year} <ButtonChangeMonth parentMethod={changeMonth}/> </div>
+                <div className="calendar__name">{monthName}  - {year} <ButtonChange parentMethod={changeMonth}/> </div>
                 <div className="calendar__week"></div>
                 <div className="calendar__days_holder">
                     {paddingDays > 0 &&
