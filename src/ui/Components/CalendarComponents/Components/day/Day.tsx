@@ -1,8 +1,8 @@
 import "./Day.css"
 import {useState} from "react";
-import {BackModal} from "../../_BackModal/BackModal.tsx";
-import {Modal} from "../../_Modal/Modal.tsx";
-import {ModalExpenses} from "../../ModalExpenses/ModalExpenses.tsx";
+import {BackModal} from "../../../_BackModal/BackModal.tsx";
+import {Modal} from "../../../_Modal/Modal.tsx";
+import {ModalExpenses} from "../../../ModalExpenses/ModalExpenses.tsx";
 
 interface DayProps {
     num: number;

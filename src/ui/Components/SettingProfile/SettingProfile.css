@@ -1,0 +1,21 @@
+.settingProfile{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 3em;
+    gap:1em;
+}
+.settingProfile button{
+    border: none;
+    padding: 1em;
+    border-radius: 1em;
+    width: 13em;
+    cursor: pointer;
+    text-transform: capitalize;
+    &:hover{
+        background-color: lightgray;
+    }
+}

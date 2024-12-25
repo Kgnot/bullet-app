@@ -1,8 +1,8 @@
 import "./Calendar.css"
-import {MonthMethods, MonthName, PaddingDays} from "../../../../scripts/monthMethods.ts";
+import {MonthMethods, MonthName, PaddingDays} from "../../../../../scripts/monthMethods.ts";
 import {Day} from "../day/Day.tsx";
 import { useState} from "react";
-import {ButtonChangeMonth} from "../../utils/ButtonChangeMonth/ButtonChangeMonth.tsx";
+import {ButtonChangeMonth} from "../../../utils/ButtonChangeMonth/ButtonChangeMonth.tsx";
 
 interface CalendarProps {
     className: string;

@@ -3,6 +3,7 @@ import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import { Suspense, lazy } from "react";
 import { Navbar } from "../Components/Header/Navbar.tsx";
 import { ProfileGlobe } from "../Components/ProfileGlobe/ProfileGlobe.tsx";
+import {Balance} from "../Components/_GlobeProperties/Balance/Balance.tsx";
 
 // Lazy-load de las vistas
 const Settings = lazy(() => import("../views/Configuration/Settings.tsx"));
@@ -14,6 +15,7 @@ const Profile = lazy(() => import("../views/Profile/Profile.tsx"));
 function App() {
     return (
         <>
+            <Balance/>
             <Router>
                 {/* Fallback para mostrar mientras se carga una vista */}
                 <Suspense fallback={<div>Loading...</div>}>
