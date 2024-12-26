@@ -1,17 +1,17 @@
 // src/Components/__App.tsx
 import { Balance } from "../_GlobeProperties/Balance/Balance.tsx";
 import { Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { /*lazy,*/ Suspense } from "react";
 import { Navbar } from "../Header/Navbar.tsx";
 import { ProfileGlobe } from "../ProfileGlobe/ProfileGlobe.tsx";
+import {Logout} from "../LogOut/Logout.tsx";
+import Settings from "../../views/Configuration/Settings.tsx";
+import Dashboard from "../../views/Dashboard/Dashboard.tsx";
+import Expenses from "../../views/Expenses/Expenses.tsx";
+import Income from "../../views/Income/Income.tsx";
+import Profile from "../../views/Profile/Profile.tsx";
+import Wallets from "../../views/Wallets/Wallets.tsx";
 
-// lazy load:
-const Settings = lazy(() => import("../../views/Configuration/Settings.tsx"));
-const Dashboard = lazy(() => import("../../views/Dashboard/Dashboard.tsx"));
-const Expenses = lazy(() => import("../../views/Expenses/Expenses.tsx"));
-const Income = lazy(() => import("../../views/Income/Income.tsx"));
-const Profile = lazy(() => import("../../views/Profile/Profile.tsx"));
-const Wallets = lazy(() => import("../../views/Wallets/Wallets"));
 
 export const __App = () => {
     return (
@@ -31,6 +31,7 @@ export const __App = () => {
             {/* Componentes comunes */}
             <Navbar />
             <ProfileGlobe />
+            <Logout/>
         </>
     );
 };

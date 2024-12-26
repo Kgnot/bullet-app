@@ -34,14 +34,14 @@
 
 /* Apartado de error */
 .is-invalid {
-    border-color: #bb5555;
+    border-color: var(--color5-var) !important;
 }
 
 .error {
     position: absolute;
     display: flex;
     text-align: start;
-    color: #bb5555;
+    color:var(--color5-var);
     margin: auto;
     left: 0;
     height: 2.5em;

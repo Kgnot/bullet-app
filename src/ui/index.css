@@ -16,6 +16,20 @@
     --color2-var:#edcabc;
     --color3-var:#a8dadc;
     --color4-var:#e9c46a;
+    --color5-var:#bb5555;
+    --color6-var:#35475e;
+    /*otros colores: */
+    --background-color: #f7f8fa;
+    --primary-color: #4a6572;
+    --text-color: #2b2d42;
+    --secondary-color: #eeeeee;
+    --button-hover: #344955;
+    --button-bg: #ffffff;
+    --button-text: #2b2d42;
+    --button-hover-bg: #f1f4f8;
+    --button-active-bg: #4a6572;
+    --button-active-text: #ffffff;
+    --border-color: #d3d6db;
 }
 
 

@@ -1,0 +1,20 @@
+.logout-button{
+    position: sticky;
+    display: block;
+    padding: 1em;
+    bottom: 10px;
+    left: 100%;
+    margin: 0 1em;
+    border: none;
+    border-radius: 50%;
+    width: 5em;
+    height: 5em;
+    text-align: center;
+    background-color:var(--color5-var) ;
+    color: #ffffff;
+    cursor: pointer;
+    transition: transform 0.2s ;
+}
+.logout-button:hover {
+    transform: scale(1.03);
+}

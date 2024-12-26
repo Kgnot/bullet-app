@@ -1,0 +1,31 @@
+.ChangeSelected {
+    position: relative;
+    display: flex;
+    flex:1;
+    gap: 0.5em;
+    width: 100%;
+    justify-content: center;
+}
+
+.ChangeSelected button {
+    flex: 1;
+    padding: 0.75em 1.5em;
+    background-color: var(--button-bg);
+    color: var(--button-text);
+    font-size: 1em;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ChangeSelected button:hover {
+    background-color: var(--button-hover-bg);
+}
+
+.ChangeSelected button.active {
+    background-color: var(--button-active-bg);
+    color: var(--button-active-text);
+    border-color: var(--button-active-bg);
+}

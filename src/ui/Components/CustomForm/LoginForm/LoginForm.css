@@ -5,7 +5,7 @@
     align-items: center;
     width: 100%;
     gap: 5rem;
-    color: white;
+    color: #000000;
 }
 .loginForm button{
     border: none;
@@ -15,7 +15,7 @@
     font-size: 1rem;
     font-family: "Proxima Nova Bold", sans-serif;
     cursor: pointer;
-    background-color: white;
+    background-color: inherit;
     transition: transform 0.2s;
 }
 .loginForm button:hover{
