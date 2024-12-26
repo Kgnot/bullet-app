@@ -8,4 +8,14 @@ export const schemaExpenses = z.object({
     wallet: z.enum(["Nequi","Efectivo","Uala","DaviPlata","Otro"]),
 });
 
+export const schemaLogin = z.object({
+    email: z.string().email("No es un email valido").min(1,"Ingrese un email"),
+    password: z.string().min(6, "La contraseña debe ser de mínimo 6 caracteres"),
+})
+
+
+
+
+
+export type FormLoginValues = z.infer<typeof schemaLogin>;
 export type FormValues = z.infer<typeof schemaExpenses>;

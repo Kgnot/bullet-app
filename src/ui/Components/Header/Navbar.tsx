@@ -10,7 +10,7 @@ import WalletRoundedIcon from '@mui/icons-material/WalletRounded';
 export const Navbar = () => {
     const navItems = [
         { to: "/profile", title: "Profile", Icon: AccountCircleIcon },
-        { to: "/", title: "Dashboard", Icon: DashboardCustomizeOutlinedIcon },
+        { to: "/dashboard", title: "Dashboard", Icon: DashboardCustomizeOutlinedIcon },
         { to: "/expenses", title: "Expenses", Icon: PriceChangeOutlinedIcon },
         { to: "/income", title: "Income", Icon: SavingsOutlinedIcon },
         { to: "/wallets", title: "Wallets", Icon: WalletRoundedIcon },

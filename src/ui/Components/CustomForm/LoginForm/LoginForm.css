@@ -1,0 +1,24 @@
+.loginForm{
+    display : flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 5rem;
+    color: white;
+}
+.loginForm button{
+    border: none;
+    padding: 1rem;
+    width: 15rem;
+    border-radius: 1rem;
+    font-size: 1rem;
+    font-family: "Proxima Nova Bold", sans-serif;
+    cursor: pointer;
+    background-color: white;
+    transition: transform 0.2s;
+}
+.loginForm button:hover{
+    background-color: #e5fff4;
+    transform:scale(1.03);
+}

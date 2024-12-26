@@ -1,0 +1,26 @@
+.Login {
+    position:relative;
+    width:auto;
+    height:100dvh;
+    background-color: var(--color3-var);
+    display:flex;
+}
+
+.login-left{
+    position:relative;
+    display: flex;
+    flex:1;
+    /*background: linear-gradient(90deg, rgba(164,244,229,1) 0%, rgba(110,224,203,1) 16%, rgba(110,224,203,1) 100%);*/
+
+}
+.login-left img{
+    width:100%;
+    object-fit:contain;
+}
+.login-right{
+    position:relative;
+    display: flex;
+    flex:1;
+    background-color:#35475e;
+    box-shadow: -2px 0 12px -2px #6e6e6e;
+}
