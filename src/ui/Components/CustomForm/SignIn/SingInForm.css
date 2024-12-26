@@ -1,0 +1,43 @@
+.signInForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.signInForm div{
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: inherit;
+    justify-content: center;
+}
+
+/*Botones porque me da pereza hacer mas componentes por hoy */
+.signInForm button , .signIn_google_button{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1em;
+    border: none;
+    border-radius: 1em;
+    cursor: pointer;
+
+    &:hover{
+        background-color: lightgray;
+    }
+}
+.buttons_div_signIn{
+    display: flex;
+    gap: 1em;
+}
+.signIn_google_button{
+    position: absolute;
+    color: var(--color5-var);
+    gap: 1em;
+    bottom: 1em;
+    right: 1em;
+}
+
+

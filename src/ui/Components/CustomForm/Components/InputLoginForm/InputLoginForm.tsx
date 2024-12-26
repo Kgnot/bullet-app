@@ -1,19 +1,18 @@
 import { Control, Controller, FieldError } from "react-hook-form";
-import {FormLoginValues} from "../../Form.ts";
 import "./InputLoginForm.css";
 
 interface Props {
-    name: keyof FormLoginValues;
-    control: Control<FormLoginValues>; // Control<FormValues>
+    name: string;
+    control: Control<any>; /* Toca ver esto*/
     label: string;
     type?: string;
-    options?: string[]; // Opciones para un select
+    options?: string[];
     error?: FieldError;
     className?: string;
     placeholder?: string;
 }
 
-const InputForm = ({ name, control, label, type,error, className,placeholder }: Props) => {
+const InputLoginForm = ({ name, control, label, type,error, className,placeholder }: Props) => {
     return (
         <div className="form-input-login-group">
             <label className="form-input-group-label" htmlFor={name}>
@@ -35,9 +34,9 @@ const InputForm = ({ name, control, label, type,error, className,placeholder }: 
                         />
                 }
             />
-            {error && <p className="error">{error.message}</p>}
+            {error && <p className="error-login">{error.message}</p>}
         </div>
     );
 };
 
-export default InputForm;
+export default InputLoginForm;

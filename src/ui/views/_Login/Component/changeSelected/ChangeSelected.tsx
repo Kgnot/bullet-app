@@ -3,9 +3,10 @@ import "./ChangeSelected.css";
 
 interface ChangeSelectedProps {
     parentMethod: (value: string) => void;
+    className?:string;
 }
 
-export const ChangeSelected = ({ parentMethod }: ChangeSelectedProps) => {
+export const ChangeSelected = ({ parentMethod ,className}: ChangeSelectedProps) => {
     const [selected, setSelected] = useState("LOGIN");
 
     const handlerMethod = (value: string) => {
@@ -14,15 +15,15 @@ export const ChangeSelected = ({ parentMethod }: ChangeSelectedProps) => {
     };
 
     return (
-        <div className="ChangeSelected">
+        <div className={`ChangeSelected ${className}`}>
             <button
                 onClick={() => handlerMethod("LOGIN")}
                 className={`ChangeSelected_login ${selected === "LOGIN" ? "active" : ""}`}>
                 Login
             </button>
             <button
-                onClick={() => handlerMethod("SING IN")}
-                className={`ChangeSelected_sing-in ${selected === "SING IN" ? "active" : ""}`}>
+                onClick={() => handlerMethod("SIGN IN")}
+                className={`ChangeSelected_sing-in ${selected === "SIGN IN" ? "active" : ""}`}>
                 Sign In
             </button>
         </div>

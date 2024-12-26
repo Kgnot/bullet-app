@@ -5,8 +5,6 @@
     align-items: start;
     gap: 1em;
     width: 55%;
-
-
 }
 
 .form-input-group-label {
@@ -37,13 +35,14 @@
     border-color: var(--color5-var) !important;
 }
 
-.error {
+.error-login {
     position: absolute;
     display: flex;
     text-align: start;
     color:var(--color5-var);
     margin: auto;
-    left: 0;
+    left: -30px;
     height: 2.5em;
-    bottom: -45px;
+    width: 25em;
+    bottom: -40px;
 }

@@ -1,7 +1,8 @@
 import "./Login.css";
-import { LoginForm } from "../../Components/CustomForm/LoginForm/LoginForm.tsx";
-import { useState } from "react";
-import { ChangeSelected } from "./Component/changeSelected/ChangeSelected.tsx";
+import {LoginForm} from "../../Components/CustomForm/LoginForm/LoginForm.tsx";
+import {useState} from "react";
+import {ChangeSelected} from "./Component/changeSelected/ChangeSelected.tsx";
+import {SignInForm} from "../../Components/CustomForm/SignIn/SignInForm.tsx";
 
 const Login = () => {
     const [selected, setSelected] = useState("LOGIN");
@@ -19,14 +20,15 @@ const Login = () => {
     return (
         <div className="Login">
             <div className="login-left">
-                <img src="./FinasitPet.svg" alt="logo" />
+                <img src="./FinasitPet.svg" alt="logo"/>
             </div>
             <div className="login-right">
-                <ChangeSelected parentMethod={changeSelected} />
+                <ChangeSelected parentMethod={changeSelected}/>
                 <div className="login-right-body">
                     <h2>{selected}</h2>
                     <p className="login-subtitle">{getSubtitle()}</p>
-                    <LoginForm/>
+                    {selected === "LOGIN" && <LoginForm/>}
+                    {selected !== "LOGIN" && <SignInForm/>}
                 </div>
             </div>
         </div>
