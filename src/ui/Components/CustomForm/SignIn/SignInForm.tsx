@@ -1,20 +1,38 @@
 import "./SingInForm.css"
-import {useAuth} from "../../../../state";
 import {SubmitHandler, useForm} from "react-hook-form";
 import {FormSingInValues, schemaSignIn} from "../Form.ts";
 import {zodResolver} from "@hookform/resolvers/zod";
 import InputLoginForm from "../Components/InputLoginForm/InputLoginForm.tsx";
 import GoogleIcon from '@mui/icons-material/Google';
+import {useNavigate} from "react-router-dom";
 
-export const SignInForm = ({className}: { className?: string }) => {
-    const {login} = useAuth();
+interface SignInFormProps {
+    className?: string;
+    methodParent: ()=>void
+
+}
+
+
+export const SignInForm = ({className,methodParent}:SignInFormProps) => {
+    const navigate = useNavigate();
     const {control, handleSubmit, formState: {errors}} = useForm<FormSingInValues>({
-        resolver: zodResolver(schemaSignIn)
+        resolver: zodResolver(schemaSignIn),
+        defaultValues: {
+            nickName: "",
+            firstName: "",
+            lastName: "",
+            email: "",
+            password: "",
+            confirmPassword: ""
+        }
     });
 
     const onsubmit: SubmitHandler<FormSingInValues> = (data) => {
-        login();
-        console.log(data)
+        methodParent();
+        console.log(data);
+        setTimeout(() => {
+            navigate("/sign/profile");
+        }, 500);
     }
 
     const handlerGoogleSignIn = () => {
@@ -26,6 +44,8 @@ export const SignInForm = ({className}: { className?: string }) => {
         <>
             <form onSubmit={handleSubmit(onsubmit)} className={`signInForm ${className}`}>
                 <div>
+                    <InputLoginForm name="nickName" control={control} type="text" label="Nickname"
+                                    error={errors.nickName}/>
                     <InputLoginForm name="firstName" control={control} type="text" label="Nombre"
                                     error={errors.firstName}/>
                     <InputLoginForm name="lastName" control={control} type="text" label="Apellido"
@@ -37,7 +57,10 @@ export const SignInForm = ({className}: { className?: string }) => {
                                     label="Confirmar Contraseña" error={errors.confirmPassword}/>
                 </div>
                 <div className="buttons_div_signIn">
-                    <button className="signIn_button" type="submit"> Registrarse</button>
+                    <button
+                        className="signIn_button"
+                        type="submit"> Registrarse
+                    </button>
                 </div>
             </form>
             <button className="signIn_google_button" onClick={handlerGoogleSignIn}><GoogleIcon/>

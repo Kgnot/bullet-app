@@ -1,16 +1,8 @@
 {
   "appId": "com.electron.${name}",
   "files": [
-    "backend/App.jar", 
     "dist-electron",
-    "dist-react",
-    "public"
-  ],
-  "extraFiles": [
-    {
-      "from": "backend",
-      "to": "resources"
-    }
+    "dist-react"
   ],
   "icon": "desktop.png",
   "mac": {

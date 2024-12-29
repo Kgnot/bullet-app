@@ -1,0 +1,57 @@
+.ProfileCreater {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Animación del título */
+.animated-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--color6-var);
+    display: inline-block;
+    overflow: hidden;
+}
+
+/* Animación para BoxProfile */
+.boxProfile-animation {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 1s ease forwards;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+/* Apartado de los botones: */
+.profileCreater_buttons_div{
+    position: relative;
+    display: flex;
+    gap: 1rem;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+
+}
+.profileCreator_button{
+    position: relative;
+    border: none;
+    padding: 0.7rem 3em;
+    cursor: pointer;
+    background-color: var(--color1-var);
+    border-radius: 5px;
+}
+.profileCreator_button:hover{
+    background-color: #bdcecb;
+}
+.profileCreator_button:active{
+    background-color: var(--button-hover);
+    color: var(--button-hover-bg);
+}

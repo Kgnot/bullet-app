@@ -1,0 +1,21 @@
+.TitleWithEffect span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: wave 0.5s ease forwards;
+}
+
+@keyframes wave {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animated-title .space {
+    width: 10px;
+}
