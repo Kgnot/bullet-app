@@ -7,7 +7,7 @@ export const WholeCalendar = () => {
             <div className="wholeCalendar">
                 <Calendar className="wholeCalendar-c"/>
                 <div className="imageCalendar">
-                    <img src="./bird.avif" alt=""/>
+                    <img src="./avatars/deer.jpg" alt=""/>
                 </div>
             </div>
 

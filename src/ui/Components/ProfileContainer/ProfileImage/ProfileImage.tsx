@@ -1,17 +1,16 @@
 import "./ProfileImage.css"
+import {UseUser} from "../../../../state/useUser.ts";
 
 export const ProfileImage = () => {
-
-    // Aquí iria un fetch a el nomreb y correo de la persona xd
-
+    const {user} = UseUser();
 
     return (
         <>
             <div className="profileImage">
                 <img src="./perfil.avif" alt="xd" />
                 <div>
-                    <h3>Nombre de Usuario</h3>
-                    <p>Correo Electrónico</p>
+                    <h3>{user.nickname}</h3>
+                    <p>{user.email}</p>
                 </div>
             
             </div>

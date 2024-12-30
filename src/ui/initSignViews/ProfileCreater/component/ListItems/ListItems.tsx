@@ -11,9 +11,9 @@ export const ListItems = ({list,className,parentMethod}:ListItemsProps) => {
     return (
         <div className={`default-list ${className}`}>
             {list.map((income, index) => (
-                <div key={index} className="income-card">
+                <div key={index} className="default-card">
                     <span>{income}</span>
-                    <button onClick={() => parentMethod(index)}>Eliminar</button>
+                    <button onClick={() => parentMethod(index)}>X</button>
                 </div>
             ))}
         </div>

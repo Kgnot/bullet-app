@@ -1,11 +1,12 @@
 /* Contenedor principal */
 .config-card {
+    position: relative;
     background-color: var(--background-color);
     border-radius: 1rem;
     padding: 1.5rem;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    max-width: 400px;
-    margin: auto;
+    width: 30em;
+    height: 100%;
 }
 
 /* Título */
@@ -44,23 +45,4 @@
 
 .income-input button:hover {
     background-color: var(--secondary-color);
-}
-/* Mini tarjeta */
-.income-card {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: white;
-    padding: 0.75rem 1rem;
-    border-radius: 0.5rem;
-    border: 1px solid #c4c4c4;
-}
-.income-card button {
-    padding: 0.5rem 1rem;
-    border: none;
-    color: var(--color5-var);
-    cursor: pointer;
-    &:hover {
-        background-color: #dcdcdc;
-    }
 }
