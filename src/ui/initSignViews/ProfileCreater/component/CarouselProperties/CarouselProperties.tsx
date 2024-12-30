@@ -11,7 +11,7 @@ import { WalletsConfig } from '../WalletsConfig/WalletsConfig.tsx';
 const CarouselProperties = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [showCarousel, setShowCarousel] = useState(false);
-
+    const [animationState, setAnimationState] = useState<"enter" | "exit">("enter");
     // Lista de componentes a mostrar
     const components = [
         <BoxProfile />,
@@ -20,16 +20,23 @@ const CarouselProperties = () => {
         <WalletsConfig />
     ];
 
-    // Funciones para cambiar el índice
+    const changeComponent = (newIndex: number) => {
+        setAnimationState("exit");
+        setTimeout(() => {
+            setCurrentIndex(newIndex);
+            setAnimationState("enter");
+        }, 500);
+    };
+
     const nextComponent = () => {
         if (currentIndex < components.length - 1) {
-            setCurrentIndex(currentIndex + 1);
+            changeComponent(currentIndex + 1);
         }
     };
 
     const prevComponent = () => {
         if (currentIndex > 0) {
-            setCurrentIndex(currentIndex - 1);
+            changeComponent(currentIndex - 1);
         }
     };
 
@@ -45,9 +52,10 @@ const CarouselProperties = () => {
         <div className="profile-carousel">
             <div className="carousel-container">
                 {/* Componente actual */}
-                {showCarousel && <div className="carousel-item">
-                    {components[currentIndex]}
-                </div>}
+                {showCarousel &&
+                    <div className={`carousel-item ${animationState}`}>
+                        {components[currentIndex]}
+                    </div>}
             </div>
 
             {/* Botones de navegación */}

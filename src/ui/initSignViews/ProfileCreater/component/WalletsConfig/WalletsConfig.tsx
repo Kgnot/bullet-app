@@ -14,7 +14,8 @@ export const WalletsConfig = () => {
         setWallets(wallets);
     }
     return (
-        <div className="walletsConfig">
+        <div className="walletsConfig" onSubmit={handleSubmit}>
+            {/*no mas para quitar el error pero debo cambiar lo de arriba*/}
             <h2>No quisieras configurar algunas billeteras? </h2>
             <div className="walletsCards">
                 {wallets.map((wallet, index) => (

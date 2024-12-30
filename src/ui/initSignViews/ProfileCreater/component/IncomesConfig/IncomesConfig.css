@@ -1,0 +1,66 @@
+/* Contenedor principal */
+.config-card {
+    background-color: var(--background-color);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    margin: auto;
+}
+
+/* Título */
+.config-card h2 {
+    text-align: center;
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: var(--primary-color);
+}
+
+/* Contenedor del input */
+.income-input {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.income-input input {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+}
+
+.income-input button {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.income-input button:hover {
+    background-color: var(--secondary-color);
+}
+/* Mini tarjeta */
+.income-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    border: 1px solid #c4c4c4;
+}
+.income-card button {
+    padding: 0.5rem 1rem;
+    border: none;
+    color: var(--color5-var);
+    cursor: pointer;
+    &:hover {
+        background-color: #dcdcdc;
+    }
+}
