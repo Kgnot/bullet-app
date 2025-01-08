@@ -1,13 +1,16 @@
 import "./Logout.css"
-import {useAuth} from "../../../state";
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import {useNavigate} from "react-router-dom";
+import apiService from "../../../service/api/apiService.ts";
 
 export const Logout = () => {
-    const {logout} = useAuth();
+    const navigate = useNavigate();
 
-    const logoutHandler = () => {
-        logout();
-        console.log("Logout");
+
+
+    const logoutHandler = async () => {
+        await apiService.logout();
+        navigate("/login");
     }
 
     return(

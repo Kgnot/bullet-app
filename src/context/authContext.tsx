@@ -1,9 +1,10 @@
-import { createContext, useState, ReactNode } from "react";
+import {createContext, useState, ReactNode, useEffect} from "react";
+import apiService from "../service/api/apiService.ts";
 
 export interface AuthContextProps {
     isAuthenticated: boolean;
-    login: () => void;
-    logout: () => void;
+    setIsAuthenticated:(auth:boolean)=>void
+    checkAuthentication: () => void;
 }
 
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -13,23 +14,25 @@ type ContextProviderProps = {
 };
 
 export const AuthProvider = ({ children }: ContextProviderProps) => {
+    const [isAuthenticated, setIsAuthenticated] = useState(false);
 
-    const [isAuthenticated, setIsAuthenticated] = useState(
-        () => JSON.parse(localStorage.getItem("isAuthenticated") || "false") // Leer del localStorage
-    );
-
-    const login = () => {
-        setIsAuthenticated(true);
-        localStorage.setItem("isAuthenticated", JSON.stringify(true)); // Guardar en localStorage
+    const checkAuthentication = async () => {
+        console.log("entrexd")
+        try {
+            const response:boolean = await apiService.isAuthenticated();
+            console.log(response);
+            setIsAuthenticated(response);
+        } catch (error) {
+            console.error("Error checking authentication:", error);
+            setIsAuthenticated(false);
+        }
     };
 
-    const logout = () => {
-        setIsAuthenticated(false);
-        localStorage.setItem("isAuthenticated", JSON.stringify(false)); // Eliminar de localStorage
-    };
-
+    useEffect(() => {
+        checkAuthentication(); // Verificar al cargar la página
+    }, [isAuthenticated]);
     return (
-        <AuthContext.Provider value={{ isAuthenticated, login, logout }}>
+        <AuthContext.Provider value={{ isAuthenticated , checkAuthentication, setIsAuthenticated}}>
             {children}
         </AuthContext.Provider>
     );

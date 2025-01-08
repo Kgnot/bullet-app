@@ -1,8 +1,8 @@
 import "./ProfileImage.css"
-import {UseUser} from "../../../../state/useUser.ts";
+import {useUser} from "../../../../state/useUser.ts";
 
 export const ProfileImage = () => {
-    const {user} = UseUser();
+    const {user} = useUser();
 
     return (
         <>

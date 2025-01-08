@@ -26,10 +26,11 @@ export const SignInForm = ({className,methodParent}:SignInFormProps) => {
             confirmPassword: ""
         }
     });
+    //context user:
 
     const onsubmit: SubmitHandler<FormSingInValues> = (data) => {
         methodParent();
-        console.log(data);
+        console.log(data)
         setTimeout(() => {
             navigate("/sign/profile");
         }, 500);

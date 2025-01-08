@@ -2,7 +2,7 @@ import React from "react";
 import {UserProvider} from "../userContext.tsx";
 import {AuthProvider} from "../authContext.tsx";
 import {ExpensesProvider} from "../expensesContext.tsx";
-import {WalletsProvider} from "../WalletsContext.tsx";
+import {WalletsProvider} from "../walletsContext.tsx";
 // Agrega otros contextos según sea necesario
 
 type AppProvidersProps = {

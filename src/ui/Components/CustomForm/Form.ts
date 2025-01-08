@@ -1,28 +1,22 @@
 import {z} from "zod";
-import {walletsFetch} from "../../../scripts/restFetch/fetch.ts";
-import {Wallets} from "../../../entities";
 
-//Aqui habrá entonces un fetch que traiga las categorías de gastos, billeteras y sentimientos
-
-const wallets = await walletsFetch();
-
-const walletsArray:string[] = wallets.map((wallet: Wallets) => wallet.wallet_type);
-const expensesArray = [" a", " b"];
-const feelingArray = ["Happy", "Sad", "Neutral"];
-
-export const schemaExpenses = z.object({
-    quantity: z.number().gte(50, "El valor mínimo es 50").positive(),
-    category: z.string().refine((val) => expensesArray.includes(val), {
-        message: "No es una categoría válida",
-    }),
-    feeling: z.string().refine((val) => feelingArray.includes(val), {
-        message: "No es un sentimiento válido",
-    }),
-    description: z.string().min(1, "No es una descripción válida"),
-    wallet: z.string().refine((val) => walletsArray.includes(val), {
-        message: "No es una billetera válida",
-    }),
-});
+export const schemaExpenses = (expensesArray:string[],
+                               walletsArray:string[],
+                               feelingsArray:string[]) => {
+    return z.object({
+        quantity: z.number().gte(50, "El valor mínimo es 50").positive(),
+        category: z.string().refine((val) => expensesArray.includes(val), {
+            message: "No es una categoría válida",
+        }),
+        feeling: z.string().refine((val) => feelingsArray.includes(val), {
+            message: "No es un sentimiento válido",
+        }),
+        description: z.string().min(1, "No es una descripción válida"),
+        wallet: z.string().refine((val) => walletsArray.includes(val), {
+            message: "No es una billetera válida",
+        }),
+    })
+}
 
 export const schemaLogin = z.object({
     email: z.string().email("No es un email valido").min(1, "Ingrese un email"),
@@ -42,6 +36,9 @@ export const schemaSignIn = z.object({
 })
 
 
+// apartado de expenses:
+type SchemaExpenses = ReturnType<typeof schemaExpenses>;
+// export types:
 export type FormSingInValues = z.infer<typeof schemaSignIn>;
 export type FormLoginValues = z.infer<typeof schemaLogin>;
-export type FormValues = z.infer<typeof schemaExpenses>;
+export type FormValues = z.infer<SchemaExpenses>;

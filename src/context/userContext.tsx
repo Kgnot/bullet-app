@@ -1,5 +1,6 @@
 import {Users} from "../entities";
 import {createContext, ReactNode, useEffect, useState} from "react";
+import apiService from "../service/api/apiService.ts";
 
 
 // Que espero que retorne mi context? :
@@ -26,11 +27,13 @@ const initialUser: Users =
 export const UserProvider = ({children}: ContextProviderProps) => {
     const [user, setUser] = useState<Users>(initialUser);
 
+    const initUser = async () => {
+        const response = await apiService;
+    }
+
+
+
     useEffect(() => {
-        const user = localStorage.getItem('user');
-        if (user) {
-            setUser(JSON.parse(user));
-        }
     }, [user]);
 
     return (
