@@ -1,10 +1,10 @@
 import {createContext, useState, ReactNode, useEffect} from "react";
-import apiService from "../service/api/apiService.ts";
+import authService from "../service/api/AuthService.ts";
 
 export interface AuthContextProps {
     isAuthenticated: boolean;
     setIsAuthenticated:(auth:boolean)=>void
-    checkAuthentication: () => void;
+    checkAuthentication: () => Promise<void>;
 }
 
 export const AuthContext = createContext<AuthContextProps | undefined>(undefined);
@@ -17,9 +17,8 @@ export const AuthProvider = ({ children }: ContextProviderProps) => {
     const [isAuthenticated, setIsAuthenticated] = useState(false);
 
     const checkAuthentication = async () => {
-        console.log("entrexd")
         try {
-            const response:boolean = await apiService.isAuthenticated();
+            const response:boolean = await authService.isAuthenticated();
             console.log(response);
             setIsAuthenticated(response);
         } catch (error) {

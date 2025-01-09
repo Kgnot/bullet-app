@@ -2,33 +2,40 @@ import "./ExpensesConfig.css"
 import {useState} from "react";
 import {InputItems} from "../InputItems/InputItems.tsx";
 import {ListItems} from "../ListItems/ListItems.tsx";
+import {useSignIn} from "../../../../../state/useSignIn.ts";
+import {Expenses} from "../../../../../entities";
 
 export const ExpensesConfig = () => {
-    const [expensesList, setExpensesList] = useState<string[]>([]);
-    const [newExpense, setNewExpense] = useState("");
+    const { signIn, addExpense, deleteExpense } = useSignIn();
+    const [newExpenseType, setNewExpenseType] = useState("");
 
-    const addExpense = () => {
-        if (newExpense.trim()) {
-            setExpensesList([...expensesList, newExpense]);
-            setNewExpense("");
+    const handleAddExpense = () => {
+        if (newExpenseType.trim()) {
+            const newExpense: Expenses = {
+                type: newExpenseType,
+            };
+            addExpense(newExpense);
+            setNewExpenseType("");
         }
     };
 
-    const deleteExpenses = (index: number) => {
-        const updatedList = expensesList.filter((_, i) => i !== index);
-        setExpensesList(updatedList);
+    const handleDeleteExpense = (expenseId: number) => {
+        deleteExpense(expenseId);
     };
 
     return (
         <div className="config-card">
             <h2>Fuentes de Gastos</h2>
             <InputItems
-                placeholder="Agrege un nuevo Gasto"
-                item={newExpense}
-                setNewItem={setNewExpense}
-                parentMethod={addExpense} />
-            {/* Lista de fuentes de ingreso */}
-            <ListItems list={expensesList} parentMethod={deleteExpenses}/>
+                placeholder="Agrega un nuevo Gasto"
+                item={newExpenseType}
+                setNewItem={setNewExpenseType}
+                parentMethod={handleAddExpense}
+            />
+            <ListItems
+                list={signIn.expenses}
+                parentMethod={handleDeleteExpense}
+            />
         </div>
     );
 };

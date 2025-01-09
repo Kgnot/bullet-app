@@ -3,6 +3,7 @@ import {LoginForm} from "../../Components/CustomForm/LoginForm/LoginForm.tsx";
 import {useRef, useState} from "react";
 import {ChangeSelected} from "./Component/changeSelected/ChangeSelected.tsx";
 import {SignInForm} from "../../Components/CustomForm/SignIn/SignInForm.tsx";
+import {SignInProvider} from "../../../context/SignIn.tsx";
 
 const Login = () => {
     const [selected, setSelected] = useState("LOGIN");
@@ -26,23 +27,25 @@ const Login = () => {
 
 
     return (
-        <div className="Login">
-            <div className= {`login-left ${isAnimating ? "close" : ""}`}>
-                <img src="./FinasitPet.svg" alt="logo"/>
-            </div>
-            <div className={`login-right ${isAnimating ? "open" : ""}`}
-                 ref={login_rightRef}
-            >
-                <ChangeSelected parentMethod={changeSelected}/>
-                <div className="login-right-body">
-                    <h2>{selected}</h2>
-                    <p className="login-subtitle">{getSubtitle()}</p>
-                    {selected === "LOGIN" && <LoginForm/>}
-                    {selected !== "LOGIN" && <SignInForm methodParent={oncClickSignInButtonAnimation}/>
-                    }
+        <SignInProvider>
+            <div className="Login">
+                <div className={`login-left ${isAnimating ? "close" : ""}`}>
+                    <img src="./FinasitPet.svg" alt="logo"/>
+                </div>
+                <div className={`login-right ${isAnimating ? "open" : ""}`}
+                     ref={login_rightRef}
+                >
+                    <ChangeSelected parentMethod={changeSelected}/>
+                    <div className="login-right-body">
+                        <h2>{selected}</h2>
+                        <p className="login-subtitle">{getSubtitle()}</p>
+                        {selected === "LOGIN" && <LoginForm/>}
+                        {selected !== "LOGIN" && <SignInForm methodParent={oncClickSignInButtonAnimation}/>
+                        }
+                    </div>
                 </div>
             </div>
-        </div>
+        </SignInProvider>
     );
 };
 

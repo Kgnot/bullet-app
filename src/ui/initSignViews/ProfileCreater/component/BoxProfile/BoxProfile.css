@@ -37,7 +37,7 @@
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.BoxProfile_img_edit button {
+.BoxProfile_img_edit label {
     background-color: var(--button-bg);
     color: var(--button-text);
     border: 1px solid var(--border-color);
@@ -49,12 +49,12 @@
     transition: all 0.3s ease;
 }
 
-.BoxProfile_img_edit button:hover {
+.BoxProfile_img_edit label:hover {
     background-color: var(--button-hover-bg);
     color: var(--text-color);
 }
 
-.BoxProfile_img_edit button:active {
+.BoxProfile_img_edit label:active {
     background-color: var(--button-active-bg);
     color: var(--button-active-text);
 }
@@ -91,3 +91,7 @@
     outline: none;
     box-shadow: 0 0 8px rgba(167, 194, 189, 0.5);
 }
+/* Apartado del input xd*/
+ input[type="file"] {
+     display: none;
+ }

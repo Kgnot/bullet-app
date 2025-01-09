@@ -1,7 +1,8 @@
 import "./ListItem.css"
+import {Expenses, Incomes} from "../../../../../entities";
 
 interface ListItemsProps {
-    list:string[];
+    list:Expenses[]|Incomes[];
     className?: string;
     parentMethod: (index:number)=> void;
 }
@@ -10,9 +11,9 @@ interface ListItemsProps {
 export const ListItems = ({list,className,parentMethod}:ListItemsProps) => {
     return (
         <div className={`default-list ${className}`}>
-            {list.map((income, index) => (
+            {list.map((item, index) => (
                 <div key={index} className="default-card">
-                    <span>{income}</span>
+                    <span>{item.type}</span>
                     <button onClick={() => parentMethod(index)}>X</button>
                 </div>
             ))}

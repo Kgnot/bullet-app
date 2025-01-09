@@ -1,54 +1,48 @@
-import {useState} from "react";
-import "./WalletsConfig.css"; // Suponiendo que tengas un archivo de estilos
+import "./WalletsConfig.css";
+import {useWallets} from "../../../../../state/useWallets.ts";
+import {useSignIn} from "../../../../../state/useSignIn.ts";
 
 export const WalletsConfig = () => {
-    const [wallets, setWallets] = useState([
-        {name: "Efectivo", img: "./wallets/Efectivo.png", amount: 0},
-        {name: "Nequi", img: "./wallets/Nequi.png", amount: 0},
-        {name: "Uala", img: "./wallets/Uala.png", amount: 0},
-        {name: "Lulo", img: "./wallets/lulobank.png", amount: 0},
-        {name: "Daviplata", img: "./wallets/daviplata.png", amount: 0},
-    ]);
+    const {wallets} = useWallets();
+    const {signIn, addBalances} = useSignIn();
+    const balances = signIn.balances;
 
-    const handleSubmit = () => {
-        setWallets(wallets);
-    }
-
-    // para manejar el input
-    const handleAmountChange = (index: number, newAmount: string) => {
-        const updatedWallets = wallets.map((wallet, i) =>
-            i === index
-                ? {...wallet, amount: parseInt(newAmount) || 0}
-                : wallet
-        );
-        setWallets(updatedWallets);
+    const handleBalanceChange = (id_wallet: number, newAmount: string) => {
+        const parsedAmount = newAmount === '' ? 0 : parseFloat(newAmount);
+        const updatedWallet = wallets.find(wallet => wallet.id_wallet === id_wallet);
+        if (updatedWallet) {
+            const updatedBalances = balances.map(balance =>
+                balance.wallet.id_wallet === id_wallet
+                    ? {...balance, amount: isNaN(parsedAmount) ? 0 : parsedAmount}
+                    : balance
+            );
+            addBalances(updatedBalances);
+        }
     };
 
-
     return (
-        <div className="walletsConfig" onSubmit={handleSubmit}>
-            {/*no mas para quitar el error pero debo cambiar lo de arriba*/}
+        <div className="walletsConfig">
             <h2>No quisieras configurar algunas billeteras? </h2>
             <div className="walletsCards">
                 {wallets.map((wallet, index) => (
                     <div key={index} className="wallet-item">
-                        <img src={wallet.img} alt={wallet.img}/>
+                        <img src="./finasit.png" alt={wallet.wallet_img_url} />
                         <div className="wallet-info">
-                            <label className="wallet-label">{wallet.name}:</label>
+                            <label className="wallet-label">{wallet.wallet_type}:</label>
                             <input
                                 className="wallet-input"
                                 type="number"
-                                value={wallet.amount}
-                                placeholder={`Saldo en ${wallet.name}`}
+                                // value={balances.find(balance => balance.wallet.id_wallet === wallet.id_wallet)?.amount || 0}
+                                placeholder={`Saldo en ${wallet.wallet_type}`}
                                 onChange={(e) =>
-                                    handleAmountChange(index, e.target.value)
+                                    handleBalanceChange(wallet.id_wallet, e.target.value)
                                 }
                             />
                         </div>
-
                     </div>
                 ))}
             </div>
         </div>
     );
 };
+

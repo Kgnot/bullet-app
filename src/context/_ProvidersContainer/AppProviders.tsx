@@ -1,8 +1,9 @@
 import React from "react";
-import {UserProvider} from "../userContext.tsx";
+import {ProfileProvider} from "../profileContext.tsx";
 import {AuthProvider} from "../authContext.tsx";
 import {ExpensesProvider} from "../expensesContext.tsx";
 import {WalletsProvider} from "../walletsContext.tsx";
+import {BalancesProvider} from "../balancesContext.tsx";
 // Agrega otros contextos según sea necesario
 
 type AppProvidersProps = {
@@ -11,14 +12,16 @@ type AppProvidersProps = {
 
 export const AppProviders = ({children}: AppProvidersProps) => {
     return (
-        <UserProvider>
+        <ProfileProvider>
             <AuthProvider>
                 <ExpensesProvider>
                     <WalletsProvider>
-                        {children}
+                        <BalancesProvider>
+                            {children}
+                        </BalancesProvider>
                     </WalletsProvider>
                 </ExpensesProvider>
             </AuthProvider>
-        </UserProvider>
+        </ProfileProvider>
     );
 };

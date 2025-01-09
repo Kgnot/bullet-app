@@ -5,6 +5,7 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import InputLoginForm from "../Components/InputLoginForm/InputLoginForm.tsx";
 import GoogleIcon from '@mui/icons-material/Google';
 import {useNavigate} from "react-router-dom";
+import {useSignIn} from "../../../../state/useSignIn.ts";
 
 interface SignInFormProps {
     className?: string;
@@ -16,21 +17,14 @@ interface SignInFormProps {
 export const SignInForm = ({className,methodParent}:SignInFormProps) => {
     const navigate = useNavigate();
     const {control, handleSubmit, formState: {errors}} = useForm<FormSingInValues>({
-        resolver: zodResolver(schemaSignIn),
-        defaultValues: {
-            nickName: "",
-            firstName: "",
-            lastName: "",
-            email: "",
-            password: "",
-            confirmPassword: ""
-        }
+        resolver: zodResolver(schemaSignIn)
     });
-    //context user:
+    // apartado del signIn:
+    const {addBasicInfo} = useSignIn();
 
     const onsubmit: SubmitHandler<FormSingInValues> = (data) => {
         methodParent();
-        console.log(data)
+        addBasicInfo(data.nickName,data.firstName,data.lastName,data.email,data.password); // add basic info. xd
         setTimeout(() => {
             navigate("/sign/profile");
         }, 500);

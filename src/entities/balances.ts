@@ -3,8 +3,8 @@ import { Wallets } from "./wallets.ts";
 
 
 export interface Balances{
-    id_balances:number;
-    user:Users;
+    id_balances?:number;
+    user?:Users;
     wallet:Wallets
     amount:number;
 }

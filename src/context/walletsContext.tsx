@@ -1,6 +1,6 @@
 import {Wallets} from "../entities";
 import {createContext, ReactNode, useEffect, useState} from "react";
-import apiService from "../service/api/apiService.ts";
+import walletsService from "../service/api/WalletsService.ts";
 
 
 export interface WalletsContextType {
@@ -27,20 +27,15 @@ export const WalletsProvider = ({children}: ContextProviderProps) => {
 
     const fetchWallets = async () => {
         try {
-            const w: Wallets[] = await apiService.walletsUser();
+            const w: Wallets[] = await walletsService.wallets();
             setWallets(w);
-            localStorage.setItem('wallets', JSON.stringify(w)); // Usa `w` aquí, no `wallets`
         } catch (error) {
             console.error("Error fetching wallets:", error);
         }
     };
 
-
     useEffect(() => {
-        const wallets = localStorage.getItem('wallets');
-        if (wallets) {
-            setWallets(JSON.parse(wallets));
-        }
+        fetchWallets();
     }, []);
 
     return (
@@ -51,7 +46,7 @@ export const WalletsProvider = ({children}: ContextProviderProps) => {
                         wallets,
                         setWallets,
                         walletsTypes,
-                        fetchWallets
+                        fetchWallets,
                     }}>
             {children}
         </WalletsContext.Provider>

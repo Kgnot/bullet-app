@@ -1,22 +1,26 @@
 import "./IncomesConfig.css";
-import { useState } from "react";
+import {useState} from "react";
 import {ListItems} from "../ListItems/ListItems.tsx";
 import {InputItems} from "../InputItems/InputItems.tsx";
+import {useSignIn} from "../../../../../state/useSignIn.ts";
+import {Expenses} from "../../../../../entities";
 
 export const IncomesConfig = () => {
-    const [incomesList, setIncomesList] = useState<string[]>([]);
+    const {signIn, addIncome, deleteIncome} = useSignIn();
     const [newIncome, setNewIncome] = useState("");
 
-    const addIncome = () => {
+    const handleAddIncome = () => {
         if (newIncome.trim()) {
-            setIncomesList([...incomesList, newIncome]);
+            const newExpense: Expenses = {
+                type: newIncome,
+            };
+            addIncome(newExpense);
             setNewIncome("");
         }
     };
 
-    const deleteIncome = (index: number) => {
-        const updatedList = incomesList.filter((_, i) => i !== index);
-        setIncomesList(updatedList);
+    const handleDeleteIncome = (expenseId: number) => {
+        deleteIncome(expenseId);
     };
 
     return (
@@ -26,9 +30,9 @@ export const IncomesConfig = () => {
                 placeholder="Agrege un nuevo ingreso"
                 item={newIncome}
                 setNewItem={setNewIncome}
-                parentMethod={addIncome} />
+                parentMethod={handleAddIncome}/>
             {/* Lista de fuentes de ingreso */}
-            <ListItems list={incomesList} parentMethod={deleteIncome}/>
+            <ListItems list={signIn.incomes} parentMethod={handleDeleteIncome}/>
         </div>
     );
 };

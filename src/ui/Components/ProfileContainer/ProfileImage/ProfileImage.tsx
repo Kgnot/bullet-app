@@ -1,16 +1,16 @@
 import "./ProfileImage.css"
-import {useUser} from "../../../../state/useUser.ts";
+import {useProfile} from "../../../../state/useProfile.ts";
 
 export const ProfileImage = () => {
-    const {user} = useUser();
+    const {profile} = useProfile();
 
     return (
         <>
             <div className="profileImage">
                 <img src="./perfil.avif" alt="xd" />
                 <div>
-                    <h3>{user.nickname}</h3>
-                    <p>{user.email}</p>
+                    <h3>{profile.user.nickname}</h3>
+                    <p>{profile.user.email}</p>
                 </div>
             
             </div>

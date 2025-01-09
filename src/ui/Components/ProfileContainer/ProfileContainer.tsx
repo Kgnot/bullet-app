@@ -1,21 +1,27 @@
 import "./ProfileContainer.css"
 import {ProfileSVG} from "../../svg"
 import { ProfileImage } from "./ProfileImage/ProfileImage"
-import {useUser} from "../../../state/useUser.ts";
+import {useProfile} from "../../../state/useProfile.ts";
+import {useEffect} from "react";
 
 interface Props{
     className?:string
 }
 
 export const ProfileContainer = ({className}:Props) => {
-    const {user} = useUser();
+    const {profile,initUser} = useProfile();
+
+
+    useEffect(() => {
+        initUser();
+    }, [initUser]);
 
     return (
         <>
             <section className={`profileContainer ${className}`}>
                 <div className="profileContainer-title">
                     <ProfileSVG width="32px"/>
-                    <h2> {user.nickname} </h2>
+                    <h2> {profile.first_name} </h2>
                 </div>
                 <div className="profileContainer-body">
                     <ProfileImage/>
